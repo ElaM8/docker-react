@@ -16,7 +16,7 @@ RUN npm run build
 FROM nginx 
 
 EXPOSE 80
-# is this required? I'm already exposing a port with docker compose
+# is this required? I'm already exposing a port with docker compose, and this shouldn't make a difference except for the developer
 
 COPY --from=builder /app/build /usr/share/nginx/html
 

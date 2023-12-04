@@ -15,6 +15,9 @@ RUN npm run build
 
 FROM nginx 
 
+# EXPOSE 80
+# is this required? I'm already exposing a port with docker compose
+
 COPY --from=builder /app/build /usr/share/nginx/html
 
 # starts automatically, so there's no run command required. 
